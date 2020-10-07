@@ -1,7 +1,7 @@
 package com.capgemini.moodAnalyser1;
 
 enum ExceptionCause{
-	EMPTY,NULL;
+	ENTERED_EMPTY,ENTERED_NULL;
 }
 public class MoodAnalyser {
 	private String message;
@@ -17,14 +17,14 @@ public class MoodAnalyser {
 				return "SAD";
 			}
 			else if(message.isBlank()) {
-				ExceptionCause causeOne = ExceptionCause.EMPTY;
-				throw new MoodAnalyserException("Cannot have a message as " + causeOne);
+				ExceptionCause first = ExceptionCause.ENTERED_EMPTY;
+				throw new MoodAnalyserException("Cannot have a message as " + first);
 			}
 			return "HAPPY";
 		}
 		catch(NullPointerException e) {
-			ExceptionCause causeTwo = ExceptionCause.NULL;
-			throw new MoodAnalyserException("Cannot have a message as " + causeTwo);
+			ExceptionCause second = ExceptionCause.ENTERED_NULL;
+			throw new MoodAnalyserException("Cannot have a message as " + second);
 		}
 		
 	}
