@@ -17,7 +17,5 @@ public String analyseMood() {
 	else
 		return "HAPPY";
 }
-public static void main(String[] args) {
-	
-}
+
 }
